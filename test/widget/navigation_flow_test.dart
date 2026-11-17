@@ -26,6 +26,11 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('CV Import'), findsOneWidget);
 
+    await tester.tap(find.text('Load Sample CV'));
+    await tester.pumpAndSettle();
+    expect(find.text('sample_cv.pdf'), findsOneWidget);
+
+    await tester.ensureVisible(find.text('Next: Add Job Description'));
     await tester.tap(find.text('Next: Add Job Description'));
     await tester.pumpAndSettle();
     expect(find.text('Job Description'), findsOneWidget);

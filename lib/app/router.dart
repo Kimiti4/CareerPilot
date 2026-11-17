@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:careerpilot_ai/features/cv_import/cv_import_screen.dart';
 import 'package:careerpilot_ai/features/dashboard/dashboard_screen.dart';
 import 'package:careerpilot_ai/features/settings/settings_screen.dart';
 import 'package:careerpilot_ai/features/welcome/welcome_screen.dart';
@@ -22,18 +23,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/cv-import',
         name: 'cv-import',
-        builder: (context, state) => WorkflowPlaceholderScreen(
-          title: 'CV Import',
-          checkpointTag: 'CP-02',
-          summary: 'Select a PDF CV from Android storage, validate size/format, and inspect extracted text.',
-          plannedControls: const [
-            'Android PDF file picker',
-            'Corrupted / encrypted / scanned PDF rejection',
-            'Extracted text preview',
-          ],
-          nextStepLabel: 'Next: Add Job Description',
-          onNextStep: () => context.push('/job-description'),
-        ),
+        builder: (context, state) => const CvImportScreen(),
       ),
       GoRoute(
         path: '/job-description',

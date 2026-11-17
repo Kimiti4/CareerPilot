@@ -46,3 +46,6 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Device-spike fixtures (generated, not for distribution)
+/test_fixtures/
